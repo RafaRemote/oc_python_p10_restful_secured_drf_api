@@ -2,7 +2,7 @@ from snippets.models import Contributor, Project, Issue, Comment
 from snippets.permissions import IsOwnerOrReadOnly
 from snippets.serializers import ContributorSerializer, ProjectSerializer, IssueSerializer, CommentSerializer
 from rest_framework import generics
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from snippets.serializers import UserSerializer
 from rest_framework import permissions
 
@@ -10,7 +10,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-
+User = get_user_model()
 
 class ContributorList(generics.ListCreateAPIView):
     queryset = Contributor.objects.all()

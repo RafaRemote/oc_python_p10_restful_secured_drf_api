@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from snippets.models import Contributor, Project, Issue, Comment, ROLES, PERMS, TYPES, TAGS, PRIORITIES, STATUSES
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 class ContributorSerializer(serializers.ModelSerializer):
 
