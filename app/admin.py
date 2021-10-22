@@ -1,5 +1,5 @@
 from django.contrib import admin
-from snippets.models import Contributor, Project, Issue, Comment
+from app.models import Contributor, Project, Issue, Comment
 
 
 class ContributorAdmin(admin.ModelAdmin):

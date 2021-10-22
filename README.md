@@ -102,4 +102,4 @@ Type:
 python manage.py createsuperuser
 ```
 
-Follow the instructions, once the superuser created you can access the default Django adminstration page with your freshly created credentials: [http:127.0.0.1/admin/](http:127.0.0.1/admin/).  
+Follow the instructions, once the superuser created you can access the default Django adminstration page with your freshly created credentials: [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
