@@ -15,8 +15,8 @@ API
 
 ## 2 - Technologies
 
-Programming language: Python 3.7.12
-Django REST Framwork: Django 3.12.4
+Programming language: Python 3.7.12  
+Django REST Framwork: Django 3.12.4  
 Database: Django's db SQLite3  
 
 ## 3 - Installation
