@@ -6,8 +6,8 @@ from rest_framework.exceptions import AuthenticationFailed
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
-                                     min_length=60,
-                                     max_length=8,
+                                     min_length=8,
+                                     max_length=64,
                                      write_only=True
                                      )
 
