@@ -95,11 +95,11 @@ The database is empty.
 
 If you want to create a superuser to access the default Django adminstration page, follow these instructions:
 
-Open a second terminal. (first one is running the script)..
+Open a second terminal. (first one is running the script).  
 Type:
 
 ```python
 python manage.py createsuperuser
 ```
 
-Follow the instructions, once the superuser created you can access the default Django adminstration page with your freshly created credentials: [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
+Follow the instructions, once the superuser created you can access the default Django adminstration page and log in with your freshly created credentials @ [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  

@@ -2,7 +2,7 @@ from rest_framework import generics, status
 from .serializers import RegisterSerializer, LoginSerializer
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import User
+from user.models import User
 
 
 class RegisterView(generics.GenericAPIView):
@@ -20,7 +20,7 @@ class RegisterView(generics.GenericAPIView):
         return Response(user_data, status=status.HTTP_201_CREATED)
 
 
-class LoginAPIView(generics.GenericAPIView):
+class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request):

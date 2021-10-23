@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User
+from user.models import User
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
 
