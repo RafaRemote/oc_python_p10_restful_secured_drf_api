@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, unique=True, db_index=True)
-    is_staff = models.BooleanField(default=False)
+    # is_staff = models.BooleanField(default=False)
     # is_verified = models.BooleanField(default=False)
     # is_active = models.BooleanField(default=True)
 
