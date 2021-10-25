@@ -3,6 +3,7 @@ from .serializers import RegisterSerializer, LoginSerializer
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from user.models import User
+from rest_framework.permissions import AllowAny
 
 
 class RegisterView(generics.GenericAPIView):
@@ -21,6 +22,7 @@ class RegisterView(generics.GenericAPIView):
 
 
 class LoginView(generics.GenericAPIView):
+    permission_classes = [AllowAny]
     serializer_class = LoginSerializer
 
     def post(self, request):

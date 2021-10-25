@@ -2,17 +2,17 @@ from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import ProjectSerializer
+from .serializers import IssueSerializer
 from django.shortcuts import get_object_or_404
-from .models import Project
+from .models import Issue
 
 
-class ProjectViewset(ModelViewSet):
+class IssueViewset(ModelViewSet):
 
-    serializer_class = ProjectSerializer
+    serializer_class = IssueSerializer
 
     def get_queryset(self):
-        queryset = Project.objects.all()
+        queryset = Issue.objects.all()
         return queryset
 
     # def post(self, request):

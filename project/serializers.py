@@ -12,3 +12,5 @@ class ProjectSerializer(serializers.ModelSerializer):
         Create and return a new `Project` instance, given the validated data.
         """
         return Project.objects.create(**validated_data)
+ 
+
