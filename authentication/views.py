@@ -7,7 +7,7 @@ from rest_framework.permissions import AllowAny
 
 
 class RegisterView(generics.GenericAPIView):
-
+    permission_classes = [AllowAny]
     serializer_class = RegisterSerializer
 
     def post(self, request):

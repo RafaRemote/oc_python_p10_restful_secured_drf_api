@@ -28,7 +28,7 @@ project_router.register(
 project_router.register(
     r'issues',
     IssueViewset,
-    basename='issues'
+    basename='issue'
     )
 
 issue_router = routers.NestedSimpleRouter(

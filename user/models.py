@@ -14,7 +14,7 @@ class UserManager(BaseUserManager):
         if first_name is None or last_name is None:
             raise TypeError('Users should have a first name and a last name')
         if email is None:
-            raise TypeError('Users should have a Email')
+            raise TypeError('Users should have an Email')
         user = self.model(
                           first_name=first_name, 
                           last_name=last_name, 
@@ -58,7 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def __str__(self):
-        return self.email
+        return f'{self.id}'
 
     def tokens(self):
         refresh = RefreshToken.for_user(self)
