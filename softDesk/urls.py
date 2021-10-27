@@ -2,14 +2,14 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_nested import routers
 
-from project.views import ProjectViewset
+from project.views import ProjectViewSet
 from contributor.views import ContributorViewset
 from issue.views import IssueViewset
 from comment.views import CommentViewset
 
 router = routers.SimpleRouter()
 
-router.register('projects', ProjectViewset, basename='projects')
+router.register('projects', ProjectViewSet, basename='projects')
 router.register('users', ContributorViewset, basename='users')
 router.register('issues', IssueViewset, basename='issues')
 router.register('comments', CommentViewset, basename='comments')
