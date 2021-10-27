@@ -12,18 +12,18 @@ class Migration(migrations.Migration):
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('issue', '0001_initial'),
-        ('project', '0001_initial'),
+        ('comment', '0001_initial'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='issue',
-            name='assignee_user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='issues', to=settings.AUTH_USER_MODEL),
+            model_name='comment',
+            name='author_user_id',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to=settings.AUTH_USER_MODEL),
         ),
         migrations.AddField(
-            model_name='issue',
-            name='project_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='issues', to='project.project'),
+            model_name='comment',
+            name='issue_id',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='issue.issue'),
         ),
     ]

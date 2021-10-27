@@ -11,7 +11,7 @@ class Project(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     type = models.CharField(choices=TYPES, max_length=100)
-    author_user_id = models.ForeignKey(User, related_name='projects', on_delete=models.CASCADE)
+    author_user_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
     created_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

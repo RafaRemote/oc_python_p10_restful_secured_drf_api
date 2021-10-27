@@ -12,11 +12,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Contributor',
+            name='Project',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('permission', models.CharField(choices=[('ADMIN', 'admin'), ('CONTRIB', 'contrib')], default='p1', max_length=100)),
-                ('role', models.CharField(choices=[('r1', 'r1'), ('r2', 'r2'), ('r3', 'r3')], default='r1', max_length=100)),
+                ('title', models.CharField(max_length=255)),
+                ('description', models.CharField(max_length=255)),
+                ('type', models.CharField(choices=[('TYPE_1', 'type_1'), ('TYPE_2', 'type_2'), ('TYPE_3', 'type_3')], max_length=100)),
+                ('created_time', models.DateTimeField(auto_now_add=True)),
             ],
         ),
     ]
