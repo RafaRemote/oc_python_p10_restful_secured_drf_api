@@ -12,4 +12,5 @@ class ProjectAdmin(admin.ModelAdmin):
                     'description'
                     ]
 
+
 admin.site.register(Project, ProjectAdmin)

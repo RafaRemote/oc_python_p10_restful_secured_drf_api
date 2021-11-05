@@ -1,10 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import (
-                                        AbstractBaseUser, 
-                                        BaseUserManager, 
+                                        AbstractBaseUser,
+                                        BaseUserManager,
                                         PermissionsMixin
                                         )
-from django.db import models
 from rest_framework_simplejwt.tokens import RefreshToken
 
 
@@ -16,8 +15,8 @@ class UserManager(BaseUserManager):
         if email is None:
             raise TypeError('Users should have an Email')
         user = self.model(
-                          first_name=first_name, 
-                          last_name=last_name, 
+                          first_name=first_name,
+                          last_name=last_name,
                           email=self.normalize_email(email),
                           **other_fields
                           )
@@ -26,7 +25,7 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, first_name, last_name, email, password, **other_fields):
-        
+
         other_fields.setdefault('is_staff', True)
         other_fields.setdefault('is_superuser', True)
         other_fields.setdefault('is_active', True)

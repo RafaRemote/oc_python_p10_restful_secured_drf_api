@@ -16,13 +16,13 @@ router.register('comments', CommentViewSet, basename='comments')
 
 project_router = routers.NestedSimpleRouter(
     router,
-    r'projects', 
+    r'projects',
     lookup='project'
     )
 
 project_router.register(
-    r'users', 
-    ContributorViewSet, 
+    r'users',
+    ContributorViewSet,
     basename='user'
     )
 project_router.register(

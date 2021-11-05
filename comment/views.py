@@ -21,9 +21,8 @@ class CommentViewSet(ModelViewSet):
         request.POST._mutable = True
         request.data["author_user_id"] = request.user.id
         request.data["issue_id"] = issue.id
-        request.POST_mutable = False 
+        request.POST_mutable = False
         return super(CommentViewSet, self).create(request, *args, **kwargs)
-
 
     def update(self, request, *args, **kwargs):
         partial = kwargs.pop('partial', False)

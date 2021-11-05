@@ -5,7 +5,6 @@ from rest_framework import status
 from .models import Project
 from custom_permissions.permissions import IsProjectOwner
 from django.shortcuts import get_object_or_404
-from rest_framework.decorators import action
 
 
 class ProjectViewSet(ModelViewSet):
@@ -13,7 +12,6 @@ class ProjectViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = (IsProjectOwner, )
 
-   
     def get_queryset(self):
         queryset = Project.objects.filter(author_user_id=self.request.user.id)
         return queryset
@@ -24,4 +22,4 @@ class ProjectViewSet(ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=self.kwargs['pk'])
         project.delete()
-        return Response({"status":"success: the project does no more exist"}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"status": "success: the project does no more exist"}, status=status.HTTP_204_NO_CONTENT)

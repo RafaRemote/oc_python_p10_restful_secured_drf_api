@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from rest_framework import permissions, status
+from rest_framework import status
 from .serializers import IssueSerializer
 from django.shortcuts import get_object_or_404
 from .models import Issue
@@ -32,7 +32,7 @@ class IssueViewSet(ModelViewSet):
             request.POST._mutable = True
             request.data["project_id"] = project.id
             request.data["assignee_user_id"] = request.user.id
-            request.POST_mutable = False 
+            request.POST_mutable = False
             return super(IssueViewSet, self).create(request, *args, **kwargs)
         else:
             return Response(

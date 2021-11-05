@@ -7,6 +7,7 @@ from .models import Contributor
 from project.models import Project
 from django.shortcuts import get_object_or_404
 
+
 class ContributorViewSet(ModelViewSet):
 
     serializer_class = ContributorSerializer
@@ -33,14 +34,14 @@ class ContributorViewSet(ModelViewSet):
         if int(request.POST['user_id']) in project_contributors_id:
             return Response(
                             {"status": "this contributor already exists for this project"},
-                             status=status.HTTP_400_BAD_REQUEST
-                             )
+                            status=status.HTTP_400_BAD_REQUEST
+                            )
         return super(ContributorViewSet, self).create(request, *args, **kwargs)
 
     def destroy(self, request, *args, **kwargs):
         try:
             contributor = Contributor.objects.get(user_id=self.kwargs['pk'], project_id=self.kwargs['project_pk'])
             contributor.delete()
-            return Response({'status':'success: contributor does no more exist'}, status=status.HTTP_204_NO_CONTENT)
+            return Response({'status': 'success: contributor does no more exist'}, status=status.HTTP_204_NO_CONTENT)
         except Contributor.DoesNotExist:
             return Response({'status': 'contributor not found'}, status=status.HTTP_404_NOT_FOUND)
