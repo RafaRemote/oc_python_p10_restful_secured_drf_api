@@ -14,11 +14,7 @@ class IssueViewSet(ModelViewSet):
     permission_classes = (IsProjectOnwerOrContributor, )
 
     def get_queryset(self):
-        print('wvw;vnmwv;m')
-        print('wvw;vnmwv;m')
-        print('wvw;vnmwv;m')
         project = get_object_or_404(Project, pk=self.request.parser_context['kwargs']['project_pk'])
-        print(project.id)
         queryset = Issue.objects.filter(project_id=project.id)
         return queryset
 
