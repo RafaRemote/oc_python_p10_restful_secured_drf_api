@@ -1,18 +1,12 @@
 from django.db import models
 from user.models import User
 
-TYPES = [
-        ('TYPE_1', 'type_1'), 
-        ('TYPE_2', 'type_2'), 
-        ('TYPE_3', 'type_3')
-        ]
 
 class Project(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
-    type = models.CharField(choices=TYPES, max_length=100)
+    title = models.CharField(max_length=255, unique=True)
+    description = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
     author_user_id = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    created_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f' {self.__class__.__name__}: {self.title}'
+        return f' id: {self.id}, {self.__class__.__name__}: {self.title}, author:{self.author_user_id}'

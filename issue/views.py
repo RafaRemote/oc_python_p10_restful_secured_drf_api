@@ -1,50 +1,41 @@
-from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import permissions, status
 from .serializers import IssueSerializer
 from django.shortcuts import get_object_or_404
 from .models import Issue
+from project.models import Project
+from custom_permissions.permissions import IsProjectOnwerOrContributor
 
 
-class IssueViewset(ModelViewSet):
+class IssueViewSet(ModelViewSet):
 
     serializer_class = IssueSerializer
+    permission_classes = (IsProjectOnwerOrContributor, )
 
     def get_queryset(self):
-        queryset = Issue.objects.all()
+        print('wvw;vnmwv;m')
+        print('wvw;vnmwv;m')
+        print('wvw;vnmwv;m')
+        project = get_object_or_404(Project, pk=self.request.parser_context['kwargs']['project_pk'])
+        print(project.id)
+        queryset = Issue.objects.filter(project_id=project.id)
         return queryset
 
-    # def post(self, request):
-    #     serializer = ProjectSerializer(data=request.data) #first we create a serializer object from the request.data using ProjectSerializer created previously.
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     else:
-    #         return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-
-    # def get(self, request, id=None):
-    #     if id:
-    #         project = Project.objects.get(id=id)
-    #         serializer = ProjectSerializer(project)
-    #         return Response({"stauts":"success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     projects = Project.objects.all()
-    #     serializer = ProjectSerializer(projects, many=True)
-    #     return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-
-    # def put(self, request, id=None):
-    #     try:
-    #         project = Project.objects.get(id=id)
-    #     except Exception:
-    #         return  Response({"error": "object not found in the database"}, status=status.HTTP_404_NOT_FOUND)
-    #     serializer = ProjectSerializer(project, data=request.data, partial=True)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     else:
-    #         return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-
-    # def delete(self, request, id=None):
-    #     item = get_object_or_404(Project, id=id)
-    #     item.delete()
-    #     return Response({"status": "success", "data": "Item Deleted"})
+    def create(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=self.request.parser_context['kwargs']['project_pk'])
+        issue = Issue.objects.filter(
+                                     title=request.POST['title'],
+                                     project_id=project.id
+                                     )
+        if len(issue) == 0:
+            request.POST._mutable = True
+            request.data["project_id"] = project.id
+            request.data["assignee_user_id"] = request.user.id
+            request.POST_mutable = False 
+            return super(IssueViewSet, self).create(request, *args, **kwargs)
+        else:
+            return Response(
+                            {"status": "An issue with the same title for the same project does already exist"},
+                            status=status.HTTP_400_BAD_REQUEST
+                            )

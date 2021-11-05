@@ -3,16 +3,16 @@ from django.urls import path, include
 from rest_framework_nested import routers
 
 from project.views import ProjectViewSet
-from contributor.views import ContributorViewset
-from issue.views import IssueViewset
-from comment.views import CommentViewset
+from contributor.views import ContributorViewSet
+from issue.views import IssueViewSet
+from comment.views import CommentViewSet
 
 router = routers.SimpleRouter()
 
 router.register('projects', ProjectViewSet, basename='projects')
-router.register('users', ContributorViewset, basename='users')
-router.register('issues', IssueViewset, basename='issues')
-router.register('comments', CommentViewset, basename='comments')
+router.register('users', ContributorViewSet, basename='users')
+router.register('issues', IssueViewSet, basename='issues')
+router.register('comments', CommentViewSet, basename='comments')
 
 project_router = routers.NestedSimpleRouter(
     router,
@@ -22,12 +22,12 @@ project_router = routers.NestedSimpleRouter(
 
 project_router.register(
     r'users', 
-    ContributorViewset, 
+    ContributorViewSet, 
     basename='user'
     )
 project_router.register(
     r'issues',
-    IssueViewset,
+    IssueViewSet,
     basename='issue'
     )
 
@@ -39,7 +39,7 @@ issue_router = routers.NestedSimpleRouter(
 
 issue_router.register(
     r'comments',
-    CommentViewset,
+    CommentViewSet,
     basename='comment'
     )
 

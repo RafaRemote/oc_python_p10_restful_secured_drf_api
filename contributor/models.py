@@ -2,13 +2,31 @@ from django.db import models
 from django.conf import settings
 from project.models import Project
 
-ROLES = [('r1', 'r1'), ('r2', 'r2'), ('r3', 'r3')]
-PERMS = [('ADMIN', 'admin'), ('CONTRIB', 'contrib')]
-
+PERMS = [
+    ('AUTHOR', 'author'),
+    ('CONTRIBUTOR', 'contributor')
+]
 
 class Contributor(models.Model):
-    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='contributors', on_delete=models.CASCADE)
-    project_id = models.ForeignKey(Project, related_name='contributors', on_delete=models.CASCADE)
-    permission = models.CharField(choices=PERMS, default='p1', max_length=100)
-    role = models.CharField(choices=ROLES, default='r1', max_length=100)
-
+    user_id = models.ForeignKey(
+                                settings.AUTH_USER_MODEL, 
+                                related_name='contributors', 
+                                on_delete=models.CASCADE
+                                )
+    project_id = models.ForeignKey(
+                                   Project,
+                                   related_name='contributors',
+                                   on_delete=models.CASCADE,
+                                   blank=True,
+                                   null=True
+                                   )
+    permission = models.CharField(choices=PERMS,
+                                  max_length=11,
+                                  blank=True,
+                                  null=True
+                                  )
+    role = models.CharField(
+                            max_length=128,
+                            blank=True,
+                            null=True
+                            )

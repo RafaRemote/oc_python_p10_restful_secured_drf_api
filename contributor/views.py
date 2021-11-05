@@ -1,50 +1,46 @@
 from rest_framework.viewsets import ModelViewSet
-
-
+from rest_framework.response import Response
+from rest_framework import status
+from custom_permissions.permissions import IsProjectOwner
 from .serializers import ContributorSerializer
-
 from .models import Contributor
+from project.models import Project
+from django.shortcuts import get_object_or_404
 
-
-class ContributorViewset(ModelViewSet):
+class ContributorViewSet(ModelViewSet):
 
     serializer_class = ContributorSerializer
-
+    permission_classes = (IsProjectOwner, )
 
     def get_queryset(self):
-        queryset = Contributor.objects.all()
+        queryset = Contributor.objects.filter(project_id=self.kwargs['project_pk'])
         return queryset
 
-    # def post(self, request):
-    #     serializer = ProjectSerializer(data=request.data) #first we create a serializer object from the request.data using ProjectSerializer created previously.
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     else:
-    #         return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
+    def create(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, pk=self.kwargs['project_pk'])
+        if int(request.POST['user_id']) == request.user.id:
+            request.POST._mutable = True
+            request.data["permission"] = 'AUTHOR'
+            request.data["project_id"] = project.id
+            request.POST_mutable = False
+        else:
+            request.POST._mutable = True
+            request.data["permission"] = 'CONTRIBUTOR'
+            request.data["project_id"] = project.id
+            request.POST._mutable = False
+        project_contributors = Contributor.objects.filter(project_id=request.POST['project_id'])
+        project_contributors_id = [i.user_id.id for i in project_contributors]
+        if int(request.POST['user_id']) in project_contributors_id:
+            return Response(
+                            {"status": "this contributor already exists for this project"},
+                             status=status.HTTP_400_BAD_REQUEST
+                             )
+        return super(ContributorViewSet, self).create(request, *args, **kwargs)
 
-    # def get(self, request, id=None):
-    #     if id:
-    #         project = Project.objects.get(id=id)
-    #         serializer = ProjectSerializer(project)
-    #         return Response({"stauts":"success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     projects = Project.objects.all()
-    #     serializer = ProjectSerializer(projects, many=True)
-    #     return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-
-    # def put(self, request, id=None):
-    #     try:
-    #         project = Project.objects.get(id=id)
-    #     except Exception:
-    #         return  Response({"error": "object not found in the database"}, status=status.HTTP_404_NOT_FOUND)
-    #     serializer = ProjectSerializer(project, data=request.data, partial=True)
-    #     if serializer.is_valid():
-    #         serializer.save()
-    #         return Response({"status": "success", "data": serializer.data}, status=status.HTTP_200_OK)
-    #     else:
-    #         return Response({"status": "error", "data": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-
-    # def delete(self, request, id=None):
-    #     item = get_object_or_404(Project, id=id)
-    #     item.delete()
-    #     return Response({"status": "success", "data": "Item Deleted"})
+    def destroy(self, request, *args, **kwargs):
+        try:
+            contributor = Contributor.objects.get(user_id=self.kwargs['pk'], project_id=self.kwargs['project_pk'])
+            contributor.delete()
+            return Response({'status':'success: contributor does no more exist'}, status=status.HTTP_204_NO_CONTENT)
+        except Contributor.DoesNotExist:
+            return Response({'status': 'contributor not found'}, status=status.HTTP_404_NOT_FOUND)

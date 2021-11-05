@@ -5,12 +5,11 @@ from .models import Project
 class ProjectAdmin(admin.ModelAdmin):
 
     list_display = [
-                    'title',
-                    'description',
-                    'type',
+                    'id',
                     'author_user_id',
-                    'created_time'
+                    'title',
+                    'type',
+                    'description'
                     ]
-
 
 admin.site.register(Project, ProjectAdmin)
