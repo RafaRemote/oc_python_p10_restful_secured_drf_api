@@ -5,6 +5,7 @@ from rest_framework import status
 from .models import Project
 from custom_permissions.permissions import IsProjectOwner
 from django.shortcuts import get_object_or_404
+from rest_framework.decorators import action
 
 
 class ProjectViewSet(ModelViewSet):
@@ -12,6 +13,7 @@ class ProjectViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = (IsProjectOwner, )
 
+   
     def get_queryset(self):
         queryset = Project.objects.filter(author_user_id=self.request.user.id)
         return queryset
