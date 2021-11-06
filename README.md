@@ -23,7 +23,7 @@ API for an Issue Tracking System
   
 ### detailed view  
   
-![ERD detailed](assets/images/softdesk_erd.png)
+![ERD detailed](assets/images/softDesk_erd.png)
   
 ## 3 - Technologies
 
