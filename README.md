@@ -3,17 +3,29 @@
 Menu
 
 1. Usage
-2. Technologies
-3. Installation
-4. Execution of the program
-5. flake8 report
-6. Important information about the database
+2. Entity–relationship model
+3. Technologies
+4. Installation
+5. Execution of the program
+6. flake8 report
+7. Important information about the database
+8. API Documentation
 
 ## 1 - Usage
 
-API
+API for an Issue Tracking System
 
-## 2 - Technologies
+## 2 - Entity–relationship model  
+  
+### simplified view  
+  
+![ERD simplified] (assets/images/database_representation.png)
+  
+### detailed view  
+  
+![ERD detailed] (assets/images/softdesk_erd.png)
+  
+## 3 - Technologies
 
 Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
      alt="shiedls.io created badge"
@@ -31,7 +43,7 @@ Database: <img src="https://img.shields.io/badge/django%20default%20database-SQL
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
 
-## 3 - Installation
+## 4 - Installation
 
 You need to have Python installed on your machine. [install python](https://www.python.org/downloads/)  
 You need to have Git installed on your machine. [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
@@ -78,7 +90,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 4 - Execution of the program
+## 5 - Execution of the program
 
 From the terminal, be sure to be in the root folder (named 'DAPY_P10_softDesk'), then type:  
 
@@ -88,7 +100,7 @@ python manage.py runserver
 
 Development server starts at: [http://127.0.0.1:8000/](http://127.0.0.1:8000)  
 
-## 5 - flake8 report
+## 6 - flake8 report
 
 In the root folder (named: 'DAPY_P10_softDesk') you'll find a folder called: 'flake8_report', including an index.html showing 'no flake8 violations'.  
 
@@ -101,7 +113,7 @@ be sure to be in the root folder 'litreview', then type:
 flake8 --format=html --htmldir=flake8_report
 ```
 
-## 6 - Important information about the database
+## 7 - Important information about the database
 
 The database is empty.  
 
@@ -115,3 +127,7 @@ python manage.py createsuperuser
 ```
 
 Follow the instructions, once the superuser created you can access the default Django adminstration page and log in with your freshly created credentials @ [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
+  
+## 8  POSTMAN API Documentation
+
+[postman api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6)
