@@ -1,4 +1,4 @@
-# Project 10: SoftDesk / Create a secured API with DRF.
+# Project 10: SoftDesk / Create a secured API with DRF
 
 Menu
 
@@ -15,9 +15,15 @@ API
 
 ## 2 - Technologies
 
-Programming language: Python 3.7.12  
-Django REST Framwork: Django 3.12.4  
-Database: Django's db SQLite3  
+Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />  
+Django REST Framwork: <img src="https://img.shields.io/badge/django-3.2.8-green"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />  
+Database: <img src="https://img.shields.io/badge/django%20default%20database-SQLite-green"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />  
 
 ## 3 - Installation
 
