@@ -99,14 +99,14 @@ git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
 cd DAPY_P10_softDesk
 ```
 
-- Install the virtual environment:  
+- Create the virtual environment:  
 (check your version of Python. Your environment should use python 3.9.2)
 
 ```python
 python -m venv env
 ```
 
-### _windows_
+### _command to create the virtual environment for windows_
   
 ```python
 py -m venv env  
@@ -118,7 +118,7 @@ py -m venv env
 source env/bin/activate
 ```
 
-### _windows_
+### _command to activate the virtual environment for windows_
   
 ```python
 env\Scripts\activate  
