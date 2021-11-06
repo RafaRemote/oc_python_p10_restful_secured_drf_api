@@ -28,6 +28,8 @@ Only the Owner of a Project/Issue/Comment can update or delete it.
   
 ## 2 - Endpoints  
   
+_(check the [POSTMAN Api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6) for all the details)_
+  
 |  			<br># 		  	|  			<br>API Endpoint 	|  			<br>HTTP Method 	|  			<br>URI 		  	|
 |---	|---	|---	|---	|
 |  			<br>1. 		  	|  			<br>User Signup 	| POST 	|  			<br>/signup/ 		  	|
@@ -77,8 +79,9 @@ Database: <img src="https://img.shields.io/badge/django%20default%20database-SQL
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
 
-## 5 - Installation
-
+## 5 - Installation MacOS / Windows
+  
+Default installation is for MacOS. There is some litle differences for Windows, follow the given details below.  
 You need to have Python installed on your machine. [install python](https://www.python.org/downloads/)  
 You need to have Git installed on your machine. [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
   
@@ -97,12 +100,17 @@ cd DAPY_P10_softDesk
 ```
 
 - Install the virtual environment:  
+(check your version of Python. Your environment should use python 3.9.2)
 
 ```python
-python3 -m venv env
+python -m venv env
 ```
 
-or on windows: py -m venv env  
+### _windows_
+  
+```python
+py -m venv env  
+```
 
 - Activate the virtual environment:  
 
@@ -110,7 +118,11 @@ or on windows: py -m venv env
 source env/bin/activate
 ```
 
-or on windows: env\Scripts\activate  
+### _windows_
+  
+```python
+env\Scripts\activate  
+```
 
 - Upgrade pip:  
 
@@ -126,26 +138,19 @@ pip install -r requirements.txt
 
 ## 6 - Execution of the program
 
-From the terminal, be sure to be in the root folder (named 'DAPY_P10_softDesk'), then type:  
+From the terminal, be sure to be in the root folder (named 'DAPY_P10_softDesk'), then follow this steps:  
 
 ```python
-python manage.py runserver
+python manage.py makemigrations  
+python manage.py migrate  
+python manage.py runserver  
 ```
 
 Development server starts at: [http://127.0.0.1:8000/](http://127.0.0.1:8000)  
 
-## 7 - flake8 report
+## 7  POSTMAN API Documentation
 
-In the root folder (named: 'DAPY_P10_softDesk') you'll find a folder called: 'flake8_report', including an index.html showing 'no flake8 violations'.  
-
-To generate a new report:  
-
-erase the folder 'flake8_report'.  
-be sure to be in the root folder 'litreview', then type:  
-
-```python
-flake8 --format=html --htmldir=flake8_report
-```
+[postman api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6)
 
 ## 8 - Important information about the database
 
@@ -162,6 +167,16 @@ python manage.py createsuperuser
 
 Follow the instructions, once the superuser created you can access the default Django adminstration page and log in with your freshly created credentials @ [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
   
-## 9  POSTMAN API Documentation
 
-[postman api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6)
+## 9 - flake8 report
+
+In the root folder (named: 'DAPY_P10_softDesk') you'll find a folder called: 'flake8_report', including an index.html showing 'no flake8 violations'.  
+
+To generate a new report:  
+
+erase the folder 'flake8_report'.  
+be sure to be in the root folder 'litreview', then type:  
+
+```python
+flake8 --format=html --htmldir=flake8_report
+```
