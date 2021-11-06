@@ -15,32 +15,41 @@ Menu
 ## 1 - Usage  
 
 API for an Issue Tracking System  
-
+Anyone can sign up hence become a User then log in.  
+  
+**Only authenticated Users can consume the API.**  
+  
+User can create a project.  
+Owner of the project can create/delete Project's Contributors.  
+Contributors and Owner of a Project can create Project's Issues.  
+Contributors and Owner of a Project can create Comment to Project's Issues.  
+  
+Only the Owner of a Project/Issue/Comment can update or delete it.  
+  
 ## 2 - Endpoints  
   
-  |  			 # 		   |  			 API Endpoint                            |  			 HTTP Method |  			 URI 		                                      |
-|--------|-------------------------------------------|---------------|---------------------------------------------|
-|  			 1. 		  |  			 User Signup                             | POST          |  			 /signup/ 		                                 |
-|  			 2. 		  |  			 Create User                             |  			 POST 		       |  			 /login/ 		                                  |
-|  			 3. 		  |  			 Get all Projects of the connected Usser |  			 GET 		        |  			 /projects/ 		                               |
-|  			 4. 		  |  			 Create Project                          | POST          |  			 /projects/ 		                               |
-|  			 5. 		  |  			 		 Get Project details with its id        |  			 GET 		        |  			 /projects/{id}/ 		                          |
-|  			 6. 		  |  			 Update Project                          |  			 PUT 		        |  			 /projects/{id}/ 		                          |
-|  			 7. 		  |  			 Delete Project and its issues           |  			 DELETE 		     |  			 /projects/{id}/ 		                          |
-|  			 8. 		  |  			 Create a Contributor to a project       |  			 POST 		       |  			 /projects/{id}/users/ 		                    |
-|  			 9. 		  |  			 Get all the Contributors of a Project   |  			 GET 		        |  			 /projects/{id}/users/ 		                    |
-|  			 10. 		 |  			 Delete a Contributor                    |  			 DELETE 		     |  			 /projects/{id}/users/{id} 		                |
-|  			 11. 		 |  			 Get all the Issues of a Project         |  			 GET 		        |  			 /projects/{id}/issues/ 		                   |
-|  			 12. 		 |  			 Create a Project's Issue                |  			 POST 		       |  			 /projects/{id}/issues/ 		                   |
-|  			 13. 		 |  			 Update a Project's Issue                |  			 PUT 		        |  			 /projects/{id}/issues/{id} 		               |
-|  			 14. 		 |  			 Delete a Project's Issue                |  			 DELETE 		     |  			 /projects/{id}/issues/{id} 		               |
-|  			 15. 		 |  			 Create an Issue's Comment               |  			 POST 		       |  			 /projects/{id}/issues/{id}/comments/ 		     |
-|  			 16. 		 |  			 Get all the Comments of an Issue        |  			 GET 		        |  			 /projects/{id}/issues/{id}/comments/ 		     |
-|  			 17. 		 |  			 Update a Comment                        |  			 PUT 		        |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
-|  			 18. 		 |  			 Delete a Comment                        |  			 DELETE 		     |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
-|  			 19. 		 | Get a Comment with its id                 |  			 GET 		        |  			 /projects/{id}/issues/{id}/comments/{id} 		 |  
-
-
+|  			<br># 		  	|  			<br>API Endpoint 	|  			<br>HTTP Method 	|  			<br>URI 		  	|
+|---	|---	|---	|---	|
+|  			<br>1. 		  	|  			<br>User Signup 	| POST 	|  			<br>/signup/ 		  	|
+|  			<br>2. 		  	|  			<br>Create User 	|  			<br>POST 		  	|  			<br>/login/ 		  	|
+|  			<br>3. 		  	|  			<br>Get all Projects of the connected Usser 	|  			<br>GET 		  	|  			<br>/projects/ 		  	|
+|  			<br>4. 		  	|  			<br>Create Project 	| POST 	|  			<br>/projects/ 		  	|
+|  			<br>5. 		  	|  			 		<br>Get Project details with its id  	|  			<br>GET 		  	|  			<br>/projects/{id}/ 		  	|
+|  			<br>6. 		  	|  			<br>Update Project 	|  			<br>PUT 		  	|  			<br>/projects/{id}/ 		  	|
+|  			<br>7. 		  	|  			<br>Delete Project and its issues 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/ 		  	|
+|  			<br>8. 		  	|  			<br>Create a Contributor to a project 	|  			<br>POST 		  	|  			<br>/projects/{id}/users/ 		  	|
+|  			<br>9. 		  	|  			<br>Get all the Contributors of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/users/ 		  	|
+|  			<br>10. 		  	|  			<br>Delete a Contributor 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/users/{id} 		  	|
+|  			<br>11. 		  	|  			<br>Get all the Issues of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/ 		  	|
+|  			<br>12. 		  	|  			<br>Create a Project's Issue 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues/ 		  	|
+|  			<br>13. 		  	|  			<br>Update a Project's Issue 	|  			<br>PUT 		  	|  			<br>/projects/{id}/issues/{id} 		  	|
+|  			<br>14. 		  	|  			<br>Delete a Project's Issue 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/issues/{id} 		  	|
+|  			<br>15. 		  	|  			<br>Create an Issue's Comment 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues/{id}/comments/ 		  	|
+|  			<br>16. 		  	|  			<br>Get all the Comments of an Issue 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/{id}/comments/ 		  	|
+|  			<br>17. 		  	|  			<br>Update a Comment 	|  			<br>PUT 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|
+|  			<br>18. 		  	|  			<br>Delete a Comment 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|
+|  			<br>19. 		  	| Get a Comment with its id 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|  
+  
 ## 3 - Entity–relationship model  
   
 ### simplified view  
@@ -52,7 +61,7 @@ API for an Issue Tracking System
 ![ERD detailed](assets/images/softDesk_erd.png)
   
 ## 4 - Technologies
-
+  
 Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
