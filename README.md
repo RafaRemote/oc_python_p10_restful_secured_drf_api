@@ -18,27 +18,27 @@ API for an Issue Tracking System
 
 ## 2 - Endpoints  
   
-  |  			 # 		   |  			 Point de terminaison d'API 		                                                                  |  			 Méthode HTTP 		 |  			 URI 		                                      |
-|--------|------------------------------------------------------------------------------------------------|-----------------|---------------------------------------------|
-|  			 1. 		  |  			 Inscription de l'utilisateur 		                                                                |  			 POST 		         |  			 /signup/ 		                                 |
-|  			 2. 		  |  			 Connexion de l'utilisateur 		                                                                  |  			 POST 		         |  			 /login/ 		                                  |
-|  			 3. 		  |  			 Récupérer la liste de tous les 			projets (projects) rattachés à l'utilisateur (user) connecté 		 |  			 GET 		          |  			 /projects/ 		                               |
-|  			 4. 		  |  			 Créer un projet 		                                                                             |  			 POST 		         |  			 /projects/ 		                               |
-|  			 5. 		  |  			 Récupérer les détails d'un 			projet (project) via son id 		                                      |  			 GET 		          |  			 /projects/{id}/ 		                          |
-|  			 6. 		  |  			 Mettre à jour un projet 		                                                                     |  			 PUT 		          |  			 /projects/{id}/ 		                          |
-|  			 7. 		  |  			 Supprimer un projet et ses 			problèmes 		                                                        |  			 DELETE 		       |  			 /projects/{id}/ 		                          |
-|  			 8. 		  |  			 Ajouter un utilisateur 			(collaborateur) à un projet 		                                          |  			 POST 		         |  			 /projects/{id}/users/ 		                    |
-|  			 9. 		  |  			 Récupérer la liste de tous les 			utilisateurs (users) attachés à un projet (project) 		          |  			 GET 		          |  			 /projects/{id}/users/ 		                    |
-|  			 10. 		 |  			 Supprimer un utilisateur d'un 			projet 		                                                        |  			 DELETE 		       |  			 /projects/{id}/users/{id} 		                |
-|  			 11. 		 |  			 Récupérer la liste des 			problèmes (issues) liés à un projet (project) 		                        |  			 GET 		          |  			 /projects/{id}/issues/ 		                   |
-|  			 12. 		 |  			 Créer un problème dans un 			projet 		                                                            |  			 POST 		         |  			 /projects/{id}/issues/ 		                   |
-|  			 13. 		 |  			 Mettre à jour un problème dans 			un projet 		                                                    |  			 PUT 		          |  			 /projects/{id}/issues/{id} 		               |
-|  			 14. 		 |  			 Supprimer un problème d'un 			projet 		                                                           |  			 DELETE 		       |  			 /projects/{id}/issues/{id} 		               |
-|  			 15. 		 |  			 Créer des commentaires sur un 			problème 		                                                      |  			 POST 		         |  			 /projects/{id}/issues/{id}/comments/ 		     |
-|  			 16. 		 |  			 Récupérer la liste de tous les 			commentaires liés à un problème (issue) 		                      |  			 GET 		          |  			 /projects/{id}/issues/{id}/comments/ 		     |
-|  			 17. 		 |  			 Modifier un commentaire 		                                                                     |  			 PUT 		          |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
-|  			 18. 		 |  			 Supprimer un commentaire 		                                                                    |  			 DELETE 		       |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
-|  			 19. 		 |  			 Récupérer un commentaire 			(comment) via son id 		                                               |  			 GET 		          |  			 /projects/{id}/issues/{id}/comments/{id} 		 |  
+  |  			 # 		   |  			 API Endpoint                            |  			 HTTP Method |  			 URI 		                                      |
+|--------|-------------------------------------------|---------------|---------------------------------------------|
+|  			 1. 		  |  			 User Signup                             | POST          |  			 /signup/ 		                                 |
+|  			 2. 		  |  			 Create User                             |  			 POST 		       |  			 /login/ 		                                  |
+|  			 3. 		  |  			 Get all Projects of the connected Usser |  			 GET 		        |  			 /projects/ 		                               |
+|  			 4. 		  |  			 Create Project                          | POST          |  			 /projects/ 		                               |
+|  			 5. 		  |  			 		 Get Project details with its id        |  			 GET 		        |  			 /projects/{id}/ 		                          |
+|  			 6. 		  |  			 Update Project                          |  			 PUT 		        |  			 /projects/{id}/ 		                          |
+|  			 7. 		  |  			 Delete Project and its issues           |  			 DELETE 		     |  			 /projects/{id}/ 		                          |
+|  			 8. 		  |  			 Create a Contributor to a project       |  			 POST 		       |  			 /projects/{id}/users/ 		                    |
+|  			 9. 		  |  			 Get all the Contributors of a Project   |  			 GET 		        |  			 /projects/{id}/users/ 		                    |
+|  			 10. 		 |  			 Delete a Contributor                    |  			 DELETE 		     |  			 /projects/{id}/users/{id} 		                |
+|  			 11. 		 |  			 Get all the Issues of a Project         |  			 GET 		        |  			 /projects/{id}/issues/ 		                   |
+|  			 12. 		 |  			 Create a Project's Issue                |  			 POST 		       |  			 /projects/{id}/issues/ 		                   |
+|  			 13. 		 |  			 Update a Project's Issue                |  			 PUT 		        |  			 /projects/{id}/issues/{id} 		               |
+|  			 14. 		 |  			 Delete a Project's Issue                |  			 DELETE 		     |  			 /projects/{id}/issues/{id} 		               |
+|  			 15. 		 |  			 Create an Issue's Comment               |  			 POST 		       |  			 /projects/{id}/issues/{id}/comments/ 		     |
+|  			 16. 		 |  			 Get all the Comments of an Issue        |  			 GET 		        |  			 /projects/{id}/issues/{id}/comments/ 		     |
+|  			 17. 		 |  			 Update a Comment                        |  			 PUT 		        |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
+|  			 18. 		 |  			 Delete a Comment                        |  			 DELETE 		     |  			 /projects/{id}/issues/{id}/comments/{id} 		 |
+|  			 19. 		 | Get a Comment with its id                 |  			 GET 		        |  			 /projects/{id}/issues/{id}/comments/{id} 		 |  
 
 
 ## 3 - Entity–relationship model  
