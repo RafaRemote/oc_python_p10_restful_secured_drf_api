@@ -19,11 +19,11 @@ API for an Issue Tracking System
   
 ### simplified view  
   
-![ERD simplified] (assets/images/database_representation.png)
+![ERD simplified](assets/images/database_representation.png)
   
 ### detailed view  
   
-![ERD detailed] (assets/images/softdesk_erd.png)
+![ERD detailed](assets/images/softdesk_erd.png)
   
 ## 3 - Technologies
 
