@@ -18,9 +18,15 @@ API
 Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
-Django REST Framwork: <img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
-     alt="shiedls.io created badge"
-     style="float: left; margin-right: 10px;" />  
+
+Frameworks:  
+<img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
+alt="shiedls.io created badge"
+style="float: left; margin-right: 10px;" />  
+<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
+alt="shiedls.io created badge"
+style="float: left; margin-right: 10px;" />  
+
 Database: <img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
