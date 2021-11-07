@@ -35,7 +35,7 @@ class IssueViewSet(ModelViewSet):
                             {"status": "An issue with the same title for the same project does already exist"},
                             status=status.HTTP_400_BAD_REQUEST
                             )
-    
+
     def destroy(self, request, *args, **kwargs):
         project = get_object_or_404(Issue, pk=self.kwargs['pk'])
         project.delete()

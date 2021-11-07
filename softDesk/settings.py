@@ -138,4 +138,3 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=1000),
     'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=1),
 }
-

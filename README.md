@@ -192,19 +192,19 @@ python manage.py createsuperuser
 
 Follow the instructions, once the superuser created you can access the default Django adminstration page and log in with your freshly created credentials @ [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
   
-## 9 - flake8 report
+## 9 - Code consistency / PEP8 Compliance: flake8
   
-In the root folder (named: 'DAPY_P10_softDesk') you'll find a folder called: 'flake8_report', including an index.html showing 'no flake8 violations'.  
+To check the code consistency you can run flake8-html wich is a dependency of this project. (check requirements.txt)
+To generate a report:  
 
-To generate a new report:  
-
-erase the folder 'flake8_report'.  
-be sure to be in the root folder 'litreview', then type:  
+be sure to be in the root folder, then type:  
 
 ```python
 flake8 --format=html --htmldir=flake8_report
 ```
 
+In the root folder, a folder named "flake8_report.html" will be generated, you can open it to check if there is flake8 violatons.
+  
 ## 10 - GDPR Compliance
   
 Private data kept in the database are the following:  
@@ -215,11 +215,14 @@ Private data kept in the database are the following:
 | last name  |
 | email      |
   
+Usage of the private data: the email address is used as a unique identifier for authentication purpose.  
+  
 **Security**:  
   
 Authentication does use the JSON Web Tokens.  
 Passwords are encrypted in the database.  
 Throttling Policy is set up globally for the project.  
+Data retention to be determined.  
   
 If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk)  
   
