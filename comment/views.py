@@ -5,13 +5,13 @@ from .models import Comment
 from issue.models import Issue
 from rest_framework.response import Response
 from rest_framework import status
-from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
+from custom_permissions.permissions import IsProjectOnwerOrContributor
 
 
 class CommentViewSet(ModelViewSet):
 
     serializer_class = CommentSerializer
-    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
+    permission_classes = (IsProjectOnwerOrContributor, )
 
     def get_queryset(self):
         queryset = Comment.objects.filter(issue_id=self.kwargs['issue_pk'])

@@ -7,7 +7,7 @@ from contributor.views import ContributorViewSet
 from issue.views import IssueViewSet
 from comment.views import CommentViewSet
 
-router = routers.SimpleRouter()
+router = routers.SimpleRouter(trailing_slash=False)
 
 router.register('projects', ProjectViewSet, basename='projects')
 router.register('users', ContributorViewSet, basename='users')

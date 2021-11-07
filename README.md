@@ -27,6 +27,7 @@ Menu
 7. flake8 report
 8. Important information about the database
 9. API Documentation
+10. GDPR Compliance
 
 ## 1 - Usage  
 
@@ -48,22 +49,22 @@ _(check the [POSTMAN Api documentation](https://documenter.getpostman.com/view/1
   
 |  			<br># 		  	|  			<br>API Endpoint 	|  			<br>HTTP Method 	|  			<br>URI 		  	|
 |---	|---	|---	|---	|
-|  			<br>1. 		  	|  			<br>User Signup 	| POST 	|  			<br>/signup/ 		  	|
-|  			<br>2. 		  	|  			<br>Create User 	|  			<br>POST 		  	|  			<br>/login/ 		  	|
-|  			<br>3. 		  	|  			<br>Get all Projects of the connected Usser 	|  			<br>GET 		  	|  			<br>/projects/ 		  	|
-|  			<br>4. 		  	|  			<br>Create Project 	| POST 	|  			<br>/projects/ 		  	|
-|  			<br>5. 		  	|  			 		<br>Get Project details with its id  	|  			<br>GET 		  	|  			<br>/projects/{id}/ 		  	|
-|  			<br>6. 		  	|  			<br>Update Project 	|  			<br>PUT 		  	|  			<br>/projects/{id}/ 		  	|
-|  			<br>7. 		  	|  			<br>Delete Project and its issues 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/ 		  	|
-|  			<br>8. 		  	|  			<br>Create a Contributor to a project 	|  			<br>POST 		  	|  			<br>/projects/{id}/users/ 		  	|
-|  			<br>9. 		  	|  			<br>Get all the Contributors of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/users/ 		  	|
+|  			<br>1. 		  	|  			<br>User Signup 	| POST 	|  			<br>/signup 		  	|
+|  			<br>2. 		  	|  			<br>Create User 	|  			<br>POST 		  	|  			<br>/login 		  	|
+|  			<br>3. 		  	|  			<br>Get all Projects of the connected Usser 	|  			<br>GET 		  	|  			<br>/projects 		  	|
+|  			<br>4. 		  	|  			<br>Create Project 	| POST 	|  			<br>/projects 		  	|
+|  			<br>5. 		  	|  			 		<br>Get Project details with its id  	|  			<br>GET 		  	|  			<br>/projects/{id} 		  	|
+|  			<br>6. 		  	|  			<br>Update Project 	|  			<br>PUT 		  	|  			<br>/projects/{id} 		  	|
+|  			<br>7. 		  	|  			<br>Delete Project and its issues 	|  			<br>DELETE 		  	|  			<br>/projects/{id} 		  	|
+|  			<br>8. 		  	|  			<br>Create a Contributor to a project 	|  			<br>POST 		  	|  			<br>/projects/{id}/users 		  	|
+|  			<br>9. 		  	|  			<br>Get all the Contributors of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/users 		  	|
 |  			<br>10. 		  	|  			<br>Delete a Contributor 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/users/{id} 		  	|
-|  			<br>11. 		  	|  			<br>Get all the Issues of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/ 		  	|
-|  			<br>12. 		  	|  			<br>Create a Project's Issue 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues/ 		  	|
+|  			<br>11. 		  	|  			<br>Get all the Issues of a Project 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues 		  	|
+|  			<br>12. 		  	|  			<br>Create a Project's Issue 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues 		  	|
 |  			<br>13. 		  	|  			<br>Update a Project's Issue 	|  			<br>PUT 		  	|  			<br>/projects/{id}/issues/{id} 		  	|
 |  			<br>14. 		  	|  			<br>Delete a Project's Issue 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/issues/{id} 		  	|
-|  			<br>15. 		  	|  			<br>Create an Issue's Comment 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues/{id}/comments/ 		  	|
-|  			<br>16. 		  	|  			<br>Get all the Comments of an Issue 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/{id}/comments/ 		  	|
+|  			<br>15. 		  	|  			<br>Create an Issue's Comment 	|  			<br>POST 		  	|  			<br>/projects/{id}/issues/{id}/comments 		  	|
+|  			<br>16. 		  	|  			<br>Get all the Comments of an Issue 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/{id}/comments 		  	|
 |  			<br>17. 		  	|  			<br>Update a Comment 	|  			<br>PUT 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|
 |  			<br>18. 		  	|  			<br>Delete a Comment 	|  			<br>DELETE 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|
 |  			<br>19. 		  	| Get a Comment with its id 	|  			<br>GET 		  	|  			<br>/projects/{id}/issues/{id}/comments/{id} 		  	|  
@@ -191,9 +192,8 @@ python manage.py createsuperuser
 
 Follow the instructions, once the superuser created you can access the default Django adminstration page and log in with your freshly created credentials @ [http:127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/).  
   
-
 ## 9 - flake8 report
-
+  
 In the root folder (named: 'DAPY_P10_softDesk') you'll find a folder called: 'flake8_report', including an index.html showing 'no flake8 violations'.  
 
 To generate a new report:  
@@ -204,3 +204,22 @@ be sure to be in the root folder 'litreview', then type:
 ```python
 flake8 --format=html --htmldir=flake8_report
 ```
+
+## 10 - GDPR Compliance
+  
+Private data kept in the database are the following:  
+  
+| data       |
+|------------|
+| first name |
+| last name  |
+| email      |
+  
+**Security**:  
+  
+Authentication does use the JSON Web Tokens.  
+Passwords are encrypted in the database.  
+Throttling Policy is set up globally for the project.  
+  
+If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmailcom?subject=[GitHub]%20Source%20Han%20Sans)  
+  

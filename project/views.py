@@ -3,16 +3,17 @@ from .serializers import ProjectSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Project
-from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
+from custom_permissions.permissions import IsObjOwner
 from django.shortcuts import get_object_or_404
 
 
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
+    permission_classes = (IsObjOwner, )
 
     def get_queryset(self):
+        print(self.request.user.id)
         queryset = Project.objects.filter(author_user_id=self.request.user.id)
         return queryset
 

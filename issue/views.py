@@ -5,13 +5,13 @@ from .serializers import IssueSerializer
 from django.shortcuts import get_object_or_404
 from .models import Issue
 from project.models import Project
-from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
+from custom_permissions.permissions import IsProjectOnwerOrContributor
 
 
 class IssueViewSet(ModelViewSet):
 
     serializer_class = IssueSerializer
-    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
+    permission_classes = (IsProjectOnwerOrContributor, )
 
     def get_queryset(self):
         project = get_object_or_404(Project, pk=self.request.parser_context['kwargs']['project_pk'])
