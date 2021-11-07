@@ -73,11 +73,10 @@ _(check the [POSTMAN Api documentation](https://documenter.getpostman.com/view/1
   
 ### detailed view  
 
-Automatically generated with the database tool: <img src="https://img.shields.io/badge/DBeaver-CE-orange"
-                                                     alt="shiedls.io created badge"
-                                                     style="float: left; margin-right: 10px;" />  
+Automatically generated from the file 'db.sqlite3' with the database tool: <img src="https://img.shields.io/badge/DBeaver-CE-orange"
+                                                                                alt="shiedls.io created badge"
+                                                                                style="float: left; margin-right: 10px;" />  
 
-  
 ![ERD detailed](assets/images/softDesk_erd.png)
   
 ## 4 - Technologies
