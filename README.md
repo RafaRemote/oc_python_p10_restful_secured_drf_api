@@ -12,6 +12,9 @@
 <img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />
+<img src="https://img.shields.io/badge/djangorestframework--simplejwt-4.7.2-orange"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />
 
 Menu
 
@@ -93,6 +96,10 @@ Frameworks:  <img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
      style="float: left; margin-right: 10px;" />  
 
 Database: <img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />  
+
+Security: <img src="https://img.shields.io/badge/djangorestframework--simplejwt-4.7.2-orange"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />  
 
