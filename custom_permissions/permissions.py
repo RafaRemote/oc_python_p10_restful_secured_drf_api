@@ -30,6 +30,10 @@ class IsProjectOnwerOrContributor(BasePermission):
         return bool(request.user in contributors or project.author_user_id == request.user)
 
     def has_object_permission(self, request, view, obj):
+        if view.basename == "projects" and view.action == "create":
+            return True
+        if view.basename == 'comments' and view.action == "retrieve":
+            return True
         if view.basename == "issue":
             return bool(obj.assignee_user_id == request.user)
         return bool(obj.author_user_id == request.user)

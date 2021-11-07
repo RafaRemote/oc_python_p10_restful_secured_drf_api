@@ -1,5 +1,18 @@
 # Project 10: SoftDesk / Create a secured API with DRF
 
+<img src="https://img.shields.io/badge/python-3.9.2-blue"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />
+<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />
+<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />
+<img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />
+
 Menu
 
 1. Usage
@@ -59,21 +72,26 @@ _(check the [POSTMAN Api documentation](https://documenter.getpostman.com/view/1
 ![ERD simplified](assets/images/database_representation.png)
   
 ### detailed view  
+
+Automatically generated with the database tool: <img src="https://img.shields.io/badge/DBeaver-CE-orange"
+                                                     alt="shiedls.io created badge"
+                                                     style="float: left; margin-right: 10px;" />  
+
   
 ![ERD detailed](assets/images/softDesk_erd.png)
   
 ## 4 - Technologies
   
 Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
-     alt="shiedls.io created badge"
-     style="float: left; margin-right: 10px;" />  
+                           alt="shiedls.io created badge"
+                           style="float: left; margin-right: 10px;" />  
 
 Frameworks:  <img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
-alt="shiedls.io created badge"
-style="float: left; margin-right: 10px;" />
+                  alt="shiedls.io created badge"
+                  style="float: left; margin-right: 10px;" />
 <img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
-alt="shiedls.io created badge"
-style="float: left; margin-right: 10px;" />  
+     alt="shiedls.io created badge"
+     style="float: left; margin-right: 10px;" />  
 
 Database: <img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
      alt="shiedls.io created badge"
