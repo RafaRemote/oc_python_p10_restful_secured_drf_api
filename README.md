@@ -173,7 +173,7 @@ python manage.py runserver
 
 Development server starts at: [http://127.0.0.1:8000/](http://127.0.0.1:8000)  
 
-## 7  POSTMAN API Documentation
+## 7 - POSTMAN API Documentation
 
 [postman api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6)
 
@@ -217,7 +217,7 @@ Private data kept in the database are the following:
   
 Usage of the private data: the email address is used as a unique identifier for authentication purpose.  
   
-**Security**:  
+**Security**  
   
 Authentication does use the JSON Web Tokens.  
 Passwords are encrypted in the database.  

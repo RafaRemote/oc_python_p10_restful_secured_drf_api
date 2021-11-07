@@ -2,3 +2,4 @@ env
 *.pyc
 __pycache__w
 d.py
+flake8_report/
