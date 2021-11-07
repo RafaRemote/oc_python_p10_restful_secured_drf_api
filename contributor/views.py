@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from custom_permissions.permissions import IsProjectOwner
+from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
 from .serializers import ContributorSerializer
 from .models import Contributor
 from project.models import Project
@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 class ContributorViewSet(ModelViewSet):
 
     serializer_class = ContributorSerializer
-    permission_classes = (IsProjectOwner, )
+    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
 
     def get_queryset(self):
         queryset = Contributor.objects.filter(project_id=self.kwargs['project_pk'])
@@ -39,9 +39,9 @@ class ContributorViewSet(ModelViewSet):
         return super(ContributorViewSet, self).create(request, *args, **kwargs)
 
     def destroy(self, request, *args, **kwargs):
-        try:
-            contributor = Contributor.objects.get(user_id=self.kwargs['pk'], project_id=self.kwargs['project_pk'])
-            contributor.delete()
-            return Response({'status': 'success: contributor does no more exist'}, status=status.HTTP_204_NO_CONTENT)
-        except Contributor.DoesNotExist:
-            return Response({'status': 'contributor not found'}, status=status.HTTP_404_NOT_FOUND)
+        project = get_object_or_404(Contributor, pk=self.kwargs['pk'])
+        project.delete()
+        return Response(
+            {"status": f"success: the {self.__class__.__name__.replace('ViewSet', '')} does no more exist"},
+            status=status.HTTP_204_NO_CONTENT
+            )

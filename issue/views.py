@@ -5,13 +5,13 @@ from .serializers import IssueSerializer
 from django.shortcuts import get_object_or_404
 from .models import Issue
 from project.models import Project
-from custom_permissions.permissions import IsProjectOnwerOrContributor
+from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
 
 
 class IssueViewSet(ModelViewSet):
 
     serializer_class = IssueSerializer
-    permission_classes = (IsProjectOnwerOrContributor, )
+    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
 
     def get_queryset(self):
         project = get_object_or_404(Project, pk=self.request.parser_context['kwargs']['project_pk'])
@@ -35,3 +35,11 @@ class IssueViewSet(ModelViewSet):
                             {"status": "An issue with the same title for the same project does already exist"},
                             status=status.HTTP_400_BAD_REQUEST
                             )
+    
+    def destroy(self, request, *args, **kwargs):
+        project = get_object_or_404(Issue, pk=self.kwargs['pk'])
+        project.delete()
+        return Response(
+            {"status": f"success: the {self.__class__.__name__.replace('ViewSet', '')} does no more exist"},
+            status=status.HTTP_204_NO_CONTENT
+            )

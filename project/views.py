@@ -3,14 +3,14 @@ from .serializers import ProjectSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Project
-from custom_permissions.permissions import IsProjectOnwerOrContributor
+from custom_permissions.permissions import IsProjectOnwerOrContributor, IsObjOwner
 from django.shortcuts import get_object_or_404
 
 
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = (IsProjectOnwerOrContributor, )
+    permission_classes = (IsProjectOnwerOrContributor, IsObjOwner, )
 
     def get_queryset(self):
         queryset = Project.objects.filter(author_user_id=self.request.user.id)
@@ -22,4 +22,7 @@ class ProjectViewSet(ModelViewSet):
     def destroy(self, request, *args, **kwargs):
         project = get_object_or_404(Project, pk=self.kwargs['pk'])
         project.delete()
-        return Response({"status": "success: the project does no more exist"}, status=status.HTTP_204_NO_CONTENT)
+        return Response(
+            {"status": f"success: the {self.__class__.__name__.replace('ViewSet', '')} does no more exist"},
+            status=status.HTTP_204_NO_CONTENT
+            )
