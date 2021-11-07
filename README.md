@@ -221,5 +221,5 @@ Authentication does use the JSON Web Tokens.
 Passwords are encrypted in the database.  
 Throttling Policy is set up globally for the project.  
   
-If any questions about the protection of the GDPR [contact us]<mailto:raphael.49410@gmail.com)>  
+If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk)  
   
