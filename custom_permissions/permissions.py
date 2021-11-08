@@ -70,6 +70,9 @@ class IsProjectOnwerOrContributor(BasePermission):
                 return False
         elif view.basename == 'issue':
             issue = get_object_or_404(Issue, pk=view.kwargs['pk'])
+            print(issue)
+            print(issue.assignee_user_id)
+            print(request.user)
             if request.user == issue.assignee_user_id:
                 return True
             else:
