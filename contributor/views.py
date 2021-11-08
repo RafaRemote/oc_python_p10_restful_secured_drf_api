@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework import status
-from custom_permissions.permissions import IsObjOwner
+from custom_permissions.permissions import IsProjectOwner
 from .serializers import ContributorSerializer
 from .models import Contributor
 from project.models import Project
@@ -11,7 +11,7 @@ from django.shortcuts import get_object_or_404
 class ContributorViewSet(ModelViewSet):
 
     serializer_class = ContributorSerializer
-    permission_classes = (IsObjOwner, )
+    permission_classes = (IsProjectOwner, )
 
     def get_queryset(self):
         queryset = Contributor.objects.filter(project_id=self.kwargs['project_pk'])
