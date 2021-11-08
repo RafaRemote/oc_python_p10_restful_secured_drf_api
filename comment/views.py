@@ -16,9 +16,16 @@ class CommentViewSet(ModelViewSet):
 
     def get_queryset(self):
         project = get_object_or_404(Project, pk=self.kwargs['project_pk'])
-        queryset = Issue.objects.filter(project_id=project.id)
-        return queryset       
-
+        issues = [str(i.id) for i in Issue.objects.filter(project_id=project.id)]
+        if len(issues) > 0:
+            issue = [i for i in issues if i == self.kwargs['issue_pk']][0]
+            queryset = Comment.objects.filter(issue_id=issue)
+            return queryset
+        else:
+            return Response(
+                            {'status': 'this issue has no comment'},
+                            status=status.HTTP_404_NOT_FOUND
+                            )
 
     def create(self, request, *args, **kwargs):
         issue = get_object_or_404(Issue, pk=self.request.parser_context['kwargs']['issue_pk'])
