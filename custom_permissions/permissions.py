@@ -34,8 +34,6 @@ class IsProjectOnwerOrContributor(BasePermission):
     def has_permission(self, request, view):
         """Gives permission to access objects
 
-
-
         Returns:
             Boolean.
         """
@@ -52,6 +50,7 @@ class IsProjectOnwerOrContributor(BasePermission):
                 project = get_object_or_404(Project, pk=view.kwargs['project_pk'])
             except KeyError:
                 project = get_object_or_404(Project, pk=view.kwargs['pk'])
+
             request_user_projects = [project for project in Project.objects.filter(author_user_id=request.user)]
             contributors = [i.user_id for i in Contributor.objects.filter(project_id=project.pk)]
             if project in request_user_projects or request.user in contributors:
@@ -59,7 +58,7 @@ class IsProjectOnwerOrContributor(BasePermission):
             else:
                 return False
 
-        allowed_actions = ['create', 'list']
+        allowed_actions = ['destroy', 'update']
         if view.action in allowed_actions and view.basename == 'projects':
             try:
                 project = get_object_or_404(Project, pk=view.kwargs['project_pk'])
