@@ -111,11 +111,15 @@ You need to have Python installed on your machine. [install python](https://www.
 You need to have Git installed on your machine. [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
   
 Open a terminal wherever you want then follow these steps:  
-(you can copy/paste the whole block)
+(you can copy/paste the whole blocks)
 
 ```python
 git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
-cd DAPY_P10_softDesk
+```
+  
+Ouvrez le dossier DAPY_P10_softDesk que vous venez de cloné, puis:  
+  
+```python
 python -m venv env
 source env/bin/activate
 pip install --upgrade pip
@@ -133,7 +137,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
----> Pensez à vérifier que votre interpreteur python soit bien prévu pour python 3.9.2.
+---> **Pensez à vérifier que votre interpreteur python soit bien prévu pour python 3.9.2.**
 
 ## 6 - Execution of the program
 
