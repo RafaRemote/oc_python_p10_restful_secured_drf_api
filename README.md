@@ -206,5 +206,5 @@ API does not send errror messages with details.
 Data retention to be determined.  
 Version Control System: Git.  
   
-If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk) or ![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote)  
+If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk) or ![https://twitter.com/RafaRemote](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote)  
   
