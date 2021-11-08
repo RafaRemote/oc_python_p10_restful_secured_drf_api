@@ -117,7 +117,7 @@ Open a terminal wherever you want then follow these steps:
 git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
 ```
   
-Ouvrez le dossier DAPY_P10_softDesk que vous venez de cloné, puis:  
+Open the folder DAPY_P10_softDesk that you just cloned, then:
   
 ```python
 python -m venv env
