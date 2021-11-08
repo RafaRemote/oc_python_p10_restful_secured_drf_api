@@ -143,6 +143,8 @@ py -m venv env
 source env/bin/activate
 ```
 
+---> Pensez à vérifier que votre interpreteur python soit bien prévu pour python 3.9.2.
+
 ### _command to activate the virtual environment for windows_
   
 ```python
