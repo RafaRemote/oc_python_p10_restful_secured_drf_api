@@ -106,7 +106,7 @@ Security: <img src="https://img.shields.io/badge/djangorestframework--simplejwt-
 
 ## 5 - Installation MacOS / Windows
   
-Default installation is for MacOS. There is some litle differences for Windows, follow the given details below.  
+Default installation is for MacOS. There is some little differences for Windows, follow the given details below.  
 You need to have Python installed on your machine. [install python](https://www.python.org/downloads/)  
 You need to have Git installed on your machine. [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
   
@@ -171,8 +171,8 @@ python manage.py migrate
 python manage.py runserver  
 ```
 
-Development server starts at: [http://127.0.0.1:8000/](http://127.0.0.1:8000)  
-
+Development server starts at url: 'http://127.0.0.1:8000/'  
+  
 ## 7 - POSTMAN API Documentation
 
 [postman api documentation](https://documenter.getpostman.com/view/12917774/UVC2HpH6)
@@ -183,7 +183,8 @@ The database is empty.
 
 If you want to create a superuser to access the default Django adminstration page, follow these instructions:
 
-Open a second terminal. (first one is running the script).  
+Open a second terminal. (first one is running the script) and think to activate the virtual environment [as precised above.](#_command-to-create-the-virtual-environment-for-windows_)  
+  
 Type:
 
 ```python
@@ -217,11 +218,13 @@ Private data kept in the database are the following:
   
 Usage of the private data: the email address is used as a unique identifier for authentication purpose.  
   
-**Security**  
+### Security
   
 Authentication does use the JSON Web Tokens.  
+Authorizations are set to access the objects.  
 Passwords are encrypted in the database.  
 Throttling Policy is set up globally for the project.  
+API does not send errror messages with details.  
 Data retention to be determined.  
 Version Control System: Git.  
   

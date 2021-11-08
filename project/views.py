@@ -3,19 +3,31 @@ from .serializers import ProjectSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Project
-from custom_permissions.permissions import IsObjOwner
+from contributor.models import Contributor
+from custom_permissions.permissions import IsProjectOnwerOrContributor
 from django.shortcuts import get_object_or_404
 
 
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
-    permission_classes = (IsObjOwner, )
+    permission_classes = (IsProjectOnwerOrContributor, )
 
     def get_queryset(self):
-        print(self.request.user.id)
+        contributings = [i.project_id for i in Contributor.objects.filter(user_id=self.request.user)]
         queryset = Project.objects.filter(author_user_id=self.request.user.id)
-        return queryset
+        print('contributings', contributings)
+        print('queryset', queryset)
+        if len(queryset) > 0:
+            return queryset
+        else:
+            return contributings
+
+    def retrieve(self, request, *args, **kwargs):
+        project = get_object_or_404(Project, id=kwargs['pk'])
+        # contributors = [user.user_id for user in Contributor.objects.filter(project_id=project.id)]
+        # print('cccccc', contributors)
+        return Response(ProjectSerializer(project).data)
 
     def perform_create(self, serializer):
         serializer.save(author_user_id=self.request.user)
