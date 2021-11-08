@@ -208,5 +208,5 @@ Version Control System: Git.
   
 If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk) or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge"
-     style="float: left; margin-right: 10px;" />][https://twitter.com/RafaRemote]  
+     style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
   
