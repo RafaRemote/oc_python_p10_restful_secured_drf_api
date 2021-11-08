@@ -111,57 +111,29 @@ You need to have Python installed on your machine. [install python](https://www.
 You need to have Git installed on your machine. [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
   
 Open a terminal wherever you want then follow these steps:  
-
-- Clone the repository:  
+(you can copy/paste the whole block)
 
 ```python
 git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
-```
-
-- Move to the root folder:  
-
-```python
 cd DAPY_P10_softDesk
-```
-
-- Create the virtual environment:  
-(check your version of Python. Your environment should use python 3.9.2)
-
-```python
 python -m venv env
+source env/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
-### _command to create the virtual environment for windows_
+### _commands for Windows_
   
 ```python
-py -m venv env  
-```
-
-- Activate the virtual environment:  
-
-```python
-source env/bin/activate
+git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
+cd DAPY_P10_softDesk
+py -m venv env
+env\Scripts\activate  
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
 
 ---> Pensez à vérifier que votre interpreteur python soit bien prévu pour python 3.9.2.
-
-### _command to activate the virtual environment for windows_
-  
-```python
-env\Scripts\activate  
-```
-
-- Upgrade pip:  
-
-```python
-pip install --upgrade pip
-```
-
-- Install the project dependencies:  
-
-```python
-pip install -r requirements.txt
-```
 
 ## 6 - Execution of the program
 
@@ -185,7 +157,7 @@ The database is empty.
 
 If you want to create a superuser to access the default Django adminstration page, follow these instructions:
 
-Open a second terminal. (first one is running the script) and think to activate the virtual environment [as precised above.](#_command-to-create-the-virtual-environment-for-windows_)  
+Open a second terminal. (first one is running the script) and think to activate the virtual environment as precised above.  
   
 Type:
 
