@@ -137,7 +137,7 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
----> **Pensez à vérifier que votre interpreteur python soit bien prévu pour python 3.9.2.**
+---> **Check the version of your interpreter. It must be for python 3.9.2**
 
 ## 6 - Execution of the program
 
