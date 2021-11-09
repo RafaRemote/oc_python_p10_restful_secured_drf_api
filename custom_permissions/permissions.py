@@ -9,7 +9,7 @@ from django.shortcuts import get_object_or_404
 
 
 class IsProjectOwner(BasePermission):
-    """Checks if the User is the Project's Owner"""
+    """Set permissions based on Project ownership"""
 
     def has_permission(self, request, view):
         """Gives permission to Project's author
@@ -29,7 +29,7 @@ class IsProjectOwner(BasePermission):
 
 
 class IsProjectOnwerOrContributor(BasePermission):
-    """Checks if the User is the Project's Owner or Contributor"""
+    """Set permissions based on Project OwnerShop and Contributing quality"""
 
     def has_permission(self, request, view):
         """Gives permission to access objects
@@ -70,9 +70,6 @@ class IsProjectOnwerOrContributor(BasePermission):
                 return False
         elif view.basename == 'issue':
             issue = get_object_or_404(Issue, pk=view.kwargs['pk'])
-            print(issue)
-            print(issue.assignee_user_id)
-            print(request.user)
             if request.user == issue.assignee_user_id:
                 return True
             else:

@@ -22,7 +22,6 @@ class ProjectViewSet(ModelViewSet):
             return contributings
 
     def retrieve(self, request, *args, **kwargs):
-        print('on cherche:', kwargs['pk'])
         project = get_object_or_404(Project, id=kwargs['pk'])
 
         return Response(ProjectSerializer(project).data)
