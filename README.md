@@ -42,6 +42,7 @@ Contributors and Owner of a Project can create Project's Issues.
 Contributors and Owner of a Project can create Comment to Project's Issues.  
   
 Only the Owner of a Project/Issue/Comment can update or delete it.  
+Only the Owner of a Project can CRUD the Contributors related it.  
   
 ## 2 - Endpoints  
   
