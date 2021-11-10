@@ -16,9 +16,14 @@
      alt="shiedls.io created badge drf jwt 4.7.2"
      style="float: left; margin-right: 10px;" />](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)  
 
-For any informations feel free to [contact me](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk) or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
+For any informations feel free to <a href="mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk">contact me</a> or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge twitter"
      style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
+[https://img.shields.io/badge/environment-local%20development%20environment-black](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment)  
+
+
+
+
 
 Menu
 
@@ -155,7 +160,7 @@ pip install -r requirements.txt
 From the terminal, be sure to be in the root folder (named 'DAPY_P10_softDesk'), then follow this steps, it will:  
 
 1. create and populate a database: 'db.sqlite3'. Is is the default database installed by Django, documentation => [<img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen" alt="shiedls.io created badge django sqlite" style="float: left; margin-right: 10px;" />](https://docs.djangoproject.com/en/3.2/intro/tutorial02/#database-setup) 
-2. start the server at url:  'http://127.0.0.1:8000/'  
+2. start the server at port 8000.
 
 ```python
 python manage.py migrate  
@@ -217,7 +222,7 @@ API does not send errror messages with details.
 Data retention to be determined.  
 Version Control System: Git.  
   
-If any questions about the protection of the GDPR [contact us](mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk) or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
+If any questions about the protection of the GDPR <a href="mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk">contact me</a> or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
   
