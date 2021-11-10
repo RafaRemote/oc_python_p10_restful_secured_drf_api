@@ -15,14 +15,13 @@
 [<img src="https://img.shields.io/badge/djangorestframework--simplejwt-4.7.2-orange"
      alt="shiedls.io created badge drf jwt 4.7.2"
      style="float: left; margin-right: 10px;" />](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)  
-
-For any informations feel free to <a href="mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk">contact me</a> or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
+[<img src="https://img.shields.io/badge/environment-local%20development%20environment-black"
+     alt="shiedls.io created badge twitter"
+     style="float: left; margin-right: 10px;" />](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment)
+  
+For any informations feel free to contact me: [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge twitter"
      style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
-[https://img.shields.io/badge/environment-local%20development%20environment-black](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment)  
-
-
-
 
 
 Menu
@@ -87,32 +86,32 @@ _(check the [POSTMAN Api documentation](https://documenter.getpostman.com/view/1
   
 ### detailed view  
 
-Automatically generated from the file 'db.sqlite3' with the database tool: <img src="https://img.shields.io/badge/DBeaver-CE-orange"
+Automatically generated from the file 'db.sqlite3' with the database tool: [<img src="https://img.shields.io/badge/DBeaver-CE-orange"
                                                                                 alt="shiedls.io created badge dqb sqlite"
-                                                                                style="float: left; margin-right: 10px;" />  
+                                                                                style="float: left; margin-right: 10px;" />](https://dbeaver.com/)  
 
 ![ERD detailed](assets/images/softDesk_erd.png)
   
 ## 4 - Technologies
   
-Programming language: <img src="https://img.shields.io/badge/python-3.9.2-blue"
+Programming language: [<img src="https://img.shields.io/badge/python-3.9.2-blue"
                            alt="shiedls.io created badge python 3.9.2"
-                           style="float: left; margin-right: 10px;" />  
+                           style="float: left; margin-right: 10px;" />](https://www.python.org/downloads/release/python-392/)  
 
-Frameworks:  <img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
+Frameworks:  [<img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
                   alt="shiedls.io created badge djano 3.2.8"
-                  style="float: left; margin-right: 10px;" />
-<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
+                  style="float: left; margin-right: 10px;" />](https://docs.djangoproject.com/en/3.2/releases/3.2.8/)
+[<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
      alt="shiedls.io created badge drf 3.12.14"
-     style="float: left; margin-right: 10px;" />  
+     style="float: left; margin-right: 10px;" />](https://www.django-rest-framework.org/)  
 
-Database: <img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
+Database: [<img src="https://img.shields.io/badge/django%20default%20database-SQLite-yellowgreen"
      alt="shiedls.io created badge django sqlite"
-     style="float: left; margin-right: 10px;" />  
+     style="float: left; margin-right: 10px;" />](https://docs.djangoproject.com/en/3.2/intro/tutorial02/#database-setup)  
 
-Security: <img src="https://img.shields.io/badge/djangorestframework--simplejwt-4.7.2-orange"
+Security: [<img src="https://img.shields.io/badge/djangorestframework--simplejwt-4.7.2-orange"
      alt="shiedls.io created badge drf jwt 4.7.2"
-     style="float: left; margin-right: 10px;" />  
+     style="float: left; margin-right: 10px;" />](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)  
 
 ## 5 - Installation MacOS / Windows
   
@@ -222,7 +221,7 @@ API does not send errror messages with details.
 Data retention to be determined.  
 Version Control System: Git.  
   
-If any questions about the protection of the GDPR <a href="mailto:raphael.49410@gmail.com?Subject=GDPR_api_softDesk">contact me</a> or [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
+If any questions about the protection of the GDPR: [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
   
