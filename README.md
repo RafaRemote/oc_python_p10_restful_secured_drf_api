@@ -128,7 +128,7 @@ git clone https://github.com/RafaRemote/DAPY_P10_softDesk.git
   
 Open the folder DAPY_P10_softDesk that you just cloned, then copy/paste the whole block below, it will:  
 
-1. create a virtual environment with [https://img.shields.io/badge/virtual%20environment-venv-yellow](https://docs.python.org/3/library/venv.html#module-venv) 
+1. create a virtual environment with [<https://img.shields.io/badge/virtual%20environment-venv-yellow" alt="shiedls.io created badge django sqlite" style="float: left; margin-right: 10px;" />](https://docs.python.org/3/library/venv.html#module-venv)
 2. activate the virtual environment
 3. upgrade your version of pip inside the virtual environment
 4. install all the requirements from the file requirements.txt, inside the virtual environment
@@ -221,7 +221,7 @@ API does not send errror messages with details.
 Data retention to be determined.  
 Version Control System: Git.  
   
-If any questions about the protection of the GDPR: [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
+If any questions about the protection of the GDPR feel free to contact me: [<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FRafaRemote"
      alt="shiedls.io created badge"
      style="float: left; margin-right: 10px;" />](https://twitter.com/RafaRemote)  
   
