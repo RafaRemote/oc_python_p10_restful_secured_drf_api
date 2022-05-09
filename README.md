@@ -3,8 +3,8 @@
 [<img src="https://img.shields.io/badge/python-3.9.2-blue"
      alt="shiedls.io created badge python 3.9.2"
      style="float: left; margin-right: 10px;" />](https://www.python.org/downloads/release/python-392/)
-[<img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
-          alt="shiedls.io created badge django 3.2.8"
+[<img src="https://img.shields.io/badge/django-3.2.13-yellowgreen"
+          alt="shiedls.io created badge django 3.2.13 "
           style="float: left; margin-right: 10px;" />](https://docs.djangoproject.com/en/3.2/releases/3.2.8/)
 [<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
      alt="shiedls.io created badge drf 12.14"
@@ -98,8 +98,8 @@ Programming language: [<img src="https://img.shields.io/badge/python-3.9.2-blue"
                            alt="shiedls.io created badge python 3.9.2"
                            style="float: left; margin-right: 10px;" />](https://www.python.org/downloads/release/python-392/)  
 
-Frameworks:  [<img src="https://img.shields.io/badge/django-3.2.8-yellowgreen"
-                  alt="shiedls.io created badge djano 3.2.8"
+Frameworks:  [<img src="https://img.shields.io/badge/django-3.2.13-yellowgreen"
+                  alt="shiedls.io created badge djano 3.2.13"
                   style="float: left; margin-right: 10px;" />](https://docs.djangoproject.com/en/3.2/releases/3.2.8/)
 [<img src="https://img.shields.io/badge/django--rest--framework-3.12.14-yellowgreen"
      alt="shiedls.io created badge drf 3.12.14"
